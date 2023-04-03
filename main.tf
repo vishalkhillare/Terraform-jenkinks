@@ -3,13 +3,13 @@ provider "aws" {
 }
 
 resource "aws_vpc" "vpc" {
-  cidr_block           = "${var.vpc-cidr}"
+  #cidr_block           = "${var.vpc-cidr}"
   enable_dns_hostnames = true
 }
 
 resource "aws_subnet" "public-subnet" {
   vpc_id            = "${aws_vpc.vpc.id}"
-  #cidr_block        = "${var.subnet-cidr-public}"
+ #cidr_block        = "${var.subnet-cidr-public}"
   availability_zone = "${var.region}a"
 }
 
