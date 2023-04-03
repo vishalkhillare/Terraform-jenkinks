@@ -9,7 +9,7 @@ resource "aws_vpc" "vpc" {
 
 resource "aws_subnet" "public-subnet" {
   vpc_id            = "${aws_vpc.vpc.id}"
-  cidr_block        = "${var.subnet-cidr-public}"
+  #cidr_block        = "${var.subnet-cidr-public}"
   availability_zone = "${var.region}a"
 }
 
@@ -38,7 +38,7 @@ resource "aws_key_pair" "web" {
 
 resource "aws_instance" "web-instance" {
   ami           = "ami-cdbfa4ab"
-  instance_type = "t2.small"
+  #instance_type = "t2.micro"
   vpc_security_group_ids      = [ "${aws_security_group.web-instance-security-group.id}" ]
   subnet_id                   = "${aws_subnet.public-subnet.id}"
   associate_public_ip_address = true
