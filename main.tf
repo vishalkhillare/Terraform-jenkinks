@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "vpc" {
-  #cidr_block           = "${var.vpc-cidr}"
+  cidr_block           = "${var.vpc-cidr}"
   enable_dns_hostnames = true
 }
 
